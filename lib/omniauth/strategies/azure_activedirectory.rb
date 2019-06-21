@@ -195,7 +195,7 @@ module OmniAuth
       #
       # @return String
       def openid_config_url
-        "https://login.windows.net/#{tenant}/.well-known/openid-configuration"
+        "https://login.windows.net/#{tenant}/v2.0/.well-known/openid-configuration"
       end
 
       ##
