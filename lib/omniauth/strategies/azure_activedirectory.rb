@@ -102,7 +102,7 @@ module OmniAuth
       #
       # @return String
       def authorize_endpoint_url
-        uri = URI(openid_config['authorization_endpoint']).gsub('/oauth2', '/oauth2/v2.0')
+        uri = URI(openid_config['authorization_endpoint'])
         uri.query = URI.encode_www_form(client_id: client_id,
                                         redirect_uri: callback_url,
                                         response_mode: response_mode,
