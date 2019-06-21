@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   # This is where we are redirected if we acquire authorization separately from
   # OmniAuth.
-  match '/authorize', to: 'signed_in#add_auth', via: [:get, :post]
+  match '/v2.0/authorize', to: 'signed_in#add_auth', via: [:get, :post]
 
   # This is where we are redirected if OmniAuth fails to authenticate the user.
   # user
