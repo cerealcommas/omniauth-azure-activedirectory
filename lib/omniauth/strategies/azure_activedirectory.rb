@@ -72,6 +72,7 @@ module OmniAuth
 
       DEFAULT_RESPONSE_TYPE = 'code id_token'
       DEFAULT_RESPONSE_MODE = 'form_post'
+      DEFAULT_SCOPE = 'openid profile email offline_access user.read'
 
       ##
       # Overridden method from OmniAuth::Strategy. This is the first step in the
@@ -227,6 +228,10 @@ module OmniAuth
       # @return String
       def response_mode
         options[:response_mode] || DEFAULT_RESPONSE_MODE
+      end
+
+      def scope
+          options[:scope] || DEFAULT_SCOPE
       end
 
       ##
