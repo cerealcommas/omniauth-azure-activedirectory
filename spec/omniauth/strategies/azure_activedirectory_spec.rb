@@ -55,7 +55,7 @@ describe OmniAuth::Strategies::AzureActiveDirectory do
   let(:env) { { 'rack.session' => { 'omniauth-azure-activedirectory.nonce' => nonce } } }
 
   before(:each) do
-    stub_request(:get, "https://login.windows.net/#{tenant}/.well-known/openid-configuration")
+    stub_request(:get, "https://login.windows.net/#{tenant}/v2.0/.well-known/openid-configuration")
       .to_return(status: 200, body: openid_config_response)
     stub_request(:get, 'https://login.windows.net/common/discovery/keys')
       .to_return(status: 200, body: keys_response)
