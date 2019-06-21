@@ -45,9 +45,10 @@ module OmniAuth
       #      provider :azure_activedirectory, ENV['AAD_KEY'], ENV['AAD_TENANT']
       #    end
       #
-      args [:client_id, :tenant]
+      args [:client_id, :tenant, :scope]
       option :client_id, nil
       option :tenant, nil
+      option :scope, nil
 
       # Field renaming is an attempt to fit the OmniAuth recommended schema as
       # best as possible.
@@ -107,6 +108,7 @@ module OmniAuth
                                         redirect_uri: callback_url,
                                         response_mode: response_mode,
                                         response_type: response_type,
+                                        scope: scope,
                                         nonce: new_nonce)
         uri.to_s
       end
